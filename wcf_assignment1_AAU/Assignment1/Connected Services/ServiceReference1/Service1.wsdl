@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:64109/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:64109/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:64109/Service1.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_Check_Prime_InputMessage">
+    <wsdl:part name="parameters" element="tns:Check_Prime" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Check_Prime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Check_PrimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Sum_Digit_InputMessage">
+    <wsdl:part name="parameters" element="tns:Sum_Digit" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Sum_Digit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Sum_DigitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Reverse_String_InputMessage">
+    <wsdl:part name="parameters" element="tns:Reverse_String" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Reverse_String_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Reverse_StringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Print_Tag_InputMessage">
+    <wsdl:part name="parameters" element="tns:Print_Tag" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Print_Tag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Print_TagResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sorting_InputMessage">
+    <wsdl:part name="parameters" element="tns:sorting" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sorting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sortingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="Check_Prime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Check_Prime" message="tns:IService1_Check_Prime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Check_PrimeResponse" message="tns:IService1_Check_Prime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Sum_Digit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Sum_Digit" message="tns:IService1_Sum_Digit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Sum_DigitResponse" message="tns:IService1_Sum_Digit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Reverse_String">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Reverse_String" message="tns:IService1_Reverse_String_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Reverse_StringResponse" message="tns:IService1_Reverse_String_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Print_Tag">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Print_Tag" message="tns:IService1_Print_Tag_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Print_TagResponse" message="tns:IService1_Print_Tag_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sorting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sorting" message="tns:IService1_sorting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sortingResponse" message="tns:IService1_sorting_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Check_Prime">
+      <soap:operation soapAction="http://tempuri.org/IService1/Check_Prime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sum_Digit">
+      <soap:operation soapAction="http://tempuri.org/IService1/Sum_Digit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reverse_String">
+      <soap:operation soapAction="http://tempuri.org/IService1/Reverse_String" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Print_Tag">
+      <soap:operation soapAction="http://tempuri.org/IService1/Print_Tag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sorting">
+      <soap:operation soapAction="http://tempuri.org/IService1/sorting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:64109/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
